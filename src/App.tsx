@@ -4,6 +4,7 @@ import Layout from './Layout';
 import Home from './Home';
 import Design from './Design';
 import Video from './Video';
+import Projects from './Projects';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/design" element={<Design />} />
           <Route path="/video" element={<Video />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </Layout>
     </Router>

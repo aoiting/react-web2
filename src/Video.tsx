@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Video: React.FC = () => {
+
+function Video(){
   return <h3>This is the Video Page</h3>;
 };
 

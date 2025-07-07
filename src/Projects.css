@@ -1,0 +1,10 @@
+.container-projects{
+justify-content: center; 
+    padding: 50px;
+}
+
+.container-image{
+ display: flex;
+  justify-content: center;
+width: 100%;
+}
