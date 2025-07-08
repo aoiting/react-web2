@@ -83,7 +83,7 @@
 .modalContent {
   color: #fff; /* Text color */
   margin-left: 20px; /* Space between image and text */
-
+  max-width: 35%; /* Limit the width of the text area */
 }
 
 .modalContent h3 {
