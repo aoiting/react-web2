@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from './Home';
-import Design from './Design';
-import Projects from './Projects';
+import Design from './Design/Design';
+import Projects from './Projects/Projects';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
