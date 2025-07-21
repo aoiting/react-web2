@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node index.js",
-    "dev": "nodemon index.cjs"
+    "dev": "vite",
+    "backend": "nodemon backend/server.js"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -17,7 +18,7 @@
     "@mui/material": "^7.2.0",
     "express": "^5.1.0",
     "mongodb": "^6.17.0",
-    "mongoose": "^8.16.1",
+    "mongoose": "^8.16.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3"
