@@ -75,21 +75,31 @@
 }
 
 .fullScreenImage img {
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
   max-width: 60%; /* Adjust the size of the image */
   max-height: 100%;
   pointer-events: none;
 }
 
 .modalContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: #fff; /* Text color */
-  margin-left: 20px; /* Space between image and text */
-  max-width: 35%; /* Limit the width of the text area */
+  margin: 20px; /* Space between image and text */
+  max-width: 50%; /* Limit the width of the text area */
 }
 
 .modalContent h3 {
-  margin: 10; /* Remove default margin */
+    display: flex;
+  margin-right: 1000px;
+  margin: 100px ; /* Remove default margin */
 }
 
 .modalContent p {
   margin: 10px 0 0; /* Add margin for spacing */
 }
+
