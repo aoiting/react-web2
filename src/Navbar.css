@@ -1,0 +1,35 @@
+.navbar {
+  padding: 0.2rem 2rem;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  display: inline-block;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+   transition: color 0.2s, border-bottom-width 0.3s;
+}
+
+.navbar button:hover,
+.navbar button:focus,
+.navbar button.active {
+  color: #8B8CD6;
+  border-bottom: 2px solid #8B8CD6;
+
+  transition: border-bottom 0.3s cubic-bezier(.4,0,.2,1), color 0.01s, border-bottom-color 0.3s;
+}

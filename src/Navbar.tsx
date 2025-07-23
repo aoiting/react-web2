@@ -3,7 +3,31 @@ import Home from './Home';
 import Design from './Design/Design';
 import Projects from './Projects/Projects';
 import { useNavigate } from 'react-router-dom';
+import './Navbar.css';
 
+
+
+
+const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+  return (
+    <nav className="navbar">
+      <ul>
+        <li><button onClick={() => navigate("/")}>Home</button></li>
+        <li><button onClick={() => navigate("/about")}>About</button></li>
+        <li><button onClick={() => navigate("/design")}>Design</button></li>
+        <li><button onClick={() => navigate("/video")}>Video</button></li>
+        <li><button onClick={() => navigate("/projects")}>Projects</button></li>
+      </ul>
+    </nav>
+  );
+};
+
+
+export default Navbar;
+
+
+/*
 const Navbar: React.FC = () => {
     const navigate = useNavigate();
   return (
@@ -18,5 +42,4 @@ const Navbar: React.FC = () => {
     </nav>
   );
 };
-
-export default Navbar;
+*/
