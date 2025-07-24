@@ -1,0 +1,9 @@
+.col1 h1 {
+  white-space: nowrap;
+  overflow-x: auto;
+  text-overflow: ellipsis;
+}
+
+.col1 {
+  overflow-x: visible;
+}
