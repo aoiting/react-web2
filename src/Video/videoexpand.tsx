@@ -1,8 +1,12 @@
 import React from 'react';
+// import Video from './VideoGrids.tsx';
+
 
 interface Video {
-  id: string;
-  url: string;
+  _id: string;
+  videoTitle: string;
+  videoDescription: string;
+  videoLocation: string;
 }
 
 interface VideoexpandProps {
@@ -26,7 +30,7 @@ const Videoexpand: React.FC<VideoexpandProps> = ({ video, onClose }) => {
           className="w-full h-auto rounded-lg"
           controls
           autoPlay
-          src={video.url}
+          src={video.videoLocation}
         ></video>
       </div>
     </div>

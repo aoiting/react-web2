@@ -2,6 +2,12 @@ const mongoose = require ("mongoose");
 
 const ProjectSchema = mongoose.Schema(
   {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      auto: true
+    },
+
     videoTitle: {
       type: String,
       required: [true, "Please enter video title"],

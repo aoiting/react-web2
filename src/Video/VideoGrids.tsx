@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+//import { Video } from './video';
 import './video.css';
 import Videoexpand from './videoexpand.tsx';
 
@@ -9,13 +10,30 @@ export interface Video {
   videoLocation: string;
 }
 
-const VideoGrid: React.FC = () => {
+const VideoGrids: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
   const getAllVideos = async () => {
+
     try {
-      const response = await fetch('/api/videos'); // Ensure this matches your backend API route
+      const response = await fetch('http://localhost:5173/video');
+      const textData = await response.text();
+      try {
+        const data = JSON.parse(textData);
+      setVideos(data);
+    } catch (jsonError) {
+      console.error('Error parsing JSON:', jsonError);
+      console.log('Response text was:', textData);
+    }
+  } catch (error) {
+    console.error('Error fetching videos:', error);
+  }
+}
+
+/*
+    try {
+      const response = await fetch('http://localhost:5173/portfolio/video'); // Ensure this matches your backend API route
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -25,6 +43,8 @@ const VideoGrid: React.FC = () => {
       console.error('Error fetching videos:', error);
     }
   };
+
+  */
 
   useEffect(() => {
     getAllVideos();
@@ -52,7 +72,7 @@ const VideoGrid: React.FC = () => {
   );
 };
 
-export default VideoGrid;
+export default VideoGrids;
 
 
 
