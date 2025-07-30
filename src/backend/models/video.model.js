@@ -32,6 +32,6 @@ const ProjectSchema = mongoose.Schema(
 );
 
 
-const Video = mongoose.model("Videos", ProjectSchema);
+const Video = mongoose.model("Video", ProjectSchema);
 
 export default Video;
