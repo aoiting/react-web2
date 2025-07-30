@@ -1,5 +1,5 @@
-const mongoose = require ("mongoose");
-const Video = require ("../models/video.model.cjs");
+import mongoose from "mongoose";
+import Video from "../models/video.model.js";
 
 const getVideos = async (req, res) => {
   try {
@@ -62,7 +62,7 @@ const deleteVideo = async (req, res) => {
   }
 };
 
-module.exports = {
+export {
   getVideos,
   getVideo,
   createVideo,

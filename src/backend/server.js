@@ -24,7 +24,7 @@ mongoose.connect(MONGO_URI, {
 import VideoRouter from "./routes/video.route.js";
 app.use("/portfolio/video", VideoRouter);
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });

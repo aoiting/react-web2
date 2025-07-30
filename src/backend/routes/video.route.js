@@ -1,8 +1,9 @@
 
-const express = require("express");
+import express from"express";
 const Video = require ("../models/video.model.js");
 const app = express();
-const {getVideos, getVideo, createVideo, updateVideo, deleteVideo} = require ('../controllers/video.controller.js');
+const router = express.Router();
+import {getVideos, getVideo, createVideo, updateVideo, deleteVideo} from '../controllers/video.controller.js';
 
 
 router.get('/', getVideos);
@@ -19,4 +20,4 @@ router.delete("/:id", deleteVideo);
 
 
 
-module.exports = router;
+export default router;

@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import VideoJStest from '../Video/VideoJStest.tsx';
 
 
 const About: React.FC = () => {
@@ -24,6 +25,10 @@ const About: React.FC = () => {
   return (
     <div className="container-design">
       <h3>This is the About Page</h3>
+
+      <div>
+        <VideoJStest videoId="75qBYnXB4r8" />
+      </div>
 
     </div>
   );

@@ -1,4 +1,5 @@
-const mongoose = require ("mongoose");
+import mongoose from "mongoose";
+import Video from "../models/video.model.js";
 
 const ProjectSchema = mongoose.Schema(
   {
@@ -33,4 +34,4 @@ const ProjectSchema = mongoose.Schema(
 
 const Video = mongoose.model("Videos", ProjectSchema);
 
-module.exports = Video;
+export default Video;

@@ -2,6 +2,7 @@ import React from 'react';
 import VideoGrids from './VideoGrids.tsx';
 import './video.css';
 
+
 function Video(){
   return (
 
@@ -11,7 +12,10 @@ function Video(){
   </div>
 
 <div className='video-grid'>
-  <VideoGrids />
+
+
+
+    <VideoGrids />
 </div>
 
 </div>
