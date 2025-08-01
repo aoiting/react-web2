@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Video from "../models/video.model.js";
+
 
 const ProjectSchema = mongoose.Schema(
   {
