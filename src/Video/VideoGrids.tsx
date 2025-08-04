@@ -31,35 +31,21 @@ const VideoGrids: React.FC = () => {
   }
 }
 
-/*
-    try {
-      const response = await fetch('http://localhost:5173/portfolio/video'); // Ensure this matches your backend API route
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-      const data = await response.json();
-      setVideos(data); // Assuming backend returns array of video objects directly
-    } catch (error) {
-      console.error('Error fetching videos:', error);
-    }
-  };
-
-  */
 
   useEffect(() => {
     getAllVideos();
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <div className="video-grid">
       {videos.map((video) => (
         <div
           key={video._id}
-          className="cursor-pointer"
+          className="video-item"
           onClick={() => setSelectedVideo(video)}
         >
           <video
-            className="w-full h-auto rounded-lg hover:opacity-80"
+            className="video-player"
             src={video.videoLocation}
             controls
           />
@@ -75,6 +61,23 @@ const VideoGrids: React.FC = () => {
 export default VideoGrids;
 
 
+
+
+
+/*
+    try {
+      const response = await fetch('http://localhost:5173/portfolio/video'); // Ensure this matches your backend API route
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const data = await response.json();
+      setVideos(data); // Assuming backend returns array of video objects directly
+    } catch (error) {
+      console.error('Error fetching videos:', error);
+    }
+  };
+
+  */
 
 /*
 
