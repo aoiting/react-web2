@@ -11,12 +11,9 @@ function Video(){
     <h3>This is the Video Page</h3>
   </div>
 
-<div className='video-grid'>
-
 
 
     <VideoGrids />
-</div>
 
 </div>
 

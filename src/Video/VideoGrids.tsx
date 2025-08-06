@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 //import { Video } from './video';
 import './video.css';
 import Videoexpand from './videoexpand.tsx';
+import 'video.js/dist/video-js.css';
+import 'videojs-youtube';
+import VideoJS from '../Video/VideoJS.tsx';
 
 export interface Video {
   _id: string;
@@ -10,6 +13,14 @@ export interface Video {
   videoLocation: string;
 }
 
+// Helper function to extract YouTube video ID from various URL formats
+function extractYouTubeId(url: string): string | null {
+  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#&?]*).*/;
+  const match = url.match(regExp);
+  return match && match[2].length === 11 ? match[2] : null;
+}
+
+
 const VideoGrids: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
@@ -17,7 +28,7 @@ const VideoGrids: React.FC = () => {
   const getAllVideos = async () => {
 
     try {
-      const response = await fetch('http://localhost:5173/portfolio/video');
+      const response = await fetch('http://localhost:8000/portfolio/Video');
       const textData = await response.text();
       try {
         const data = JSON.parse(textData);
@@ -36,23 +47,25 @@ const VideoGrids: React.FC = () => {
     getAllVideos();
   }, []);
 
-  return (
+    return (
     <div className="video-grid">
-      {videos.map((video) => (
-        <div
-          key={video._id}
-          className="video-item"
-          onClick={() => setSelectedVideo(video)}
-        >
-          <video
-            className="video-player"
-            src={video.videoLocation}
-            controls
-          />
-          <h4>{video.videoTitle}</h4>
-          {/* You can also show videoDescription if needed */}
-        </div>
-      ))}
+      {videos.map((video) => {
+        const videoId = extractYouTubeId(video.videoLocation);
+        if (!videoId) return null; // skip invalid URLs or non-YouTube videos
+
+        return (
+          <div
+            key={video._id}
+            className="video-item"
+            onClick={() => setSelectedVideo(video)}
+          >
+            <VideoJS videoId={videoId} />
+            <h4>{video.videoTitle}</h4>
+            {/* Optional: <p>{video.videoDescription}</p> */}
+          </div>
+        );
+      })}
+
       <Videoexpand video={selectedVideo} onClose={() => setSelectedVideo(null)} />
     </div>
   );
@@ -62,6 +75,30 @@ export default VideoGrids;
 
 
 
+/* test front end 
+
+const [videos, setVideos] = useState<Video[]>(mockVideos);
+
+
+  const getAllVideos = async () => {
+const mockVideos: Video[] = [
+  {
+    _id: '1',
+    videoTitle: 'Sample Video 1',
+    videoDescription: 'Description of sample video 1',
+    videoLocation: 'https://www.w3schools.com/html/mov_bbb.mp4',
+  },
+  {
+    _id: '2',
+    videoTitle: 'Sample Video 2',
+    videoDescription: 'Description of sample video 2',
+    videoLocation: 'https://www.w3schools.com/html/movie.mp4',
+  },
+  // Add more mock videos as needed
+];
+}
+
+*/
 
 
 /*

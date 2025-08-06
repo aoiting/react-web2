@@ -3,7 +3,9 @@ import Video from "../models/video.model.js";
 
 const getVideos = async (req, res) => {
   try {
+    console.log("Fetching all videos");
     const videos = await Video.find({});
+    console.log(videos);
     res.status(200).json(videos);
   } catch (error) {
     res.status(500).json({ message: error.message });

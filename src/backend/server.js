@@ -8,6 +8,15 @@ import mongoose from "mongoose";
 
 const MONGO_URI = "mongodb+srv://tingweb:Apple123@tingweb.cayzawy.mongodb.net/portfolio?retryWrites=true&w=majority&appName=tingweb";
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

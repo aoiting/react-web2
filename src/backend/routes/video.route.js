@@ -1,6 +1,5 @@
 
 import express from"express";
-const app = express();
 const router = express.Router();
 import {getVideos, getVideo, createVideo, updateVideo, deleteVideo} from '../controllers/video.controller.js';
 
