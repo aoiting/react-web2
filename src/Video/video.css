@@ -1,12 +1,55 @@
-.video-banner{
-  justify-content: center; 
-    padding-top: 50px;
+.video-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+    width: 100%;
+  overflow-x: hidden;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
+
+.video-banner{
+   display: flex;
+  justify-content: center;
+  align-items: center; /* vertically center content */
+  padding: 30px 1rem;  /* top/bottom padding and responsive left/right */
+  text-align: center;
+}
+
+.video-banner h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Medium screens */
+@media (min-width: 640px) {
+  .video-banner {
+    padding: 40px 2rem;
+  }
+  .video-banner h3 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .video-banner {
+    padding: 50px 3rem;
+  }
+  .video-banner h3 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
 
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }
@@ -19,35 +62,65 @@ video {
 
 .video-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 1rem;
   padding: 1.5rem;
+   max-width: 100%; /* important to avoid overflow */
+  overflow-x: hidden; /* to prevent any accidental horizontal scroll */
 }
 
 @media (min-width: 640px) {
   /* sm */
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+     gap: 1.5rem;
   }
 }
 
 @media (min-width: 768px) {
   /* md */
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+         gap: 2rem;
   }
 }
 
 @media (min-width: 1024px) {
   /* lg */
   .video-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+      gap: 3rem;
+  padding: 1rem;
   }
 }
 
 .video-item {
-   width: 100%;
   cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-thumbnail {
+  width: 100%; /* full width of grid item */
+  max-width: 300px; /* limit size, adjust as needed */
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.video-item h4 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.video-description {
+  font-size: 0.85rem;
+  color: #FFF;
+  text-align: left;
+  margin: 0;
 }
 
 .video-player {

@@ -6,7 +6,7 @@ import './video.css';
 function Video(){
   return (
 
-<div>
+<div className='video-container'>
   <div className='video-banner'>
     <h3>This is the Video Page</h3>
   </div>

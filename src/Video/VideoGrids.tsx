@@ -49,9 +49,12 @@ const VideoGrids: React.FC = () => {
 
     return (
     <div className="video-grid">
+
       {videos.map((video) => {
         const videoId = extractYouTubeId(video.videoLocation);
         if (!videoId) return null; // skip invalid URLs or non-YouTube videos
+
+ const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
         return (
           <div
@@ -59,9 +62,16 @@ const VideoGrids: React.FC = () => {
             className="video-item"
             onClick={() => setSelectedVideo(video)}
           >
+          <img
+            src={thumbnailUrl}
+            alt={video.videoTitle}
+            className="video-thumbnail"
+            style={{ cursor: "pointer" }}
+          />
+
             <VideoJS videoId={videoId} />
             <h4>{video.videoTitle}</h4>
-            {/* Optional: <p>{video.videoDescription}</p> */}
+         <p className="video-description">{video.videoDescription}</p>  {/* Add this line */}
           </div>
         );
       })}

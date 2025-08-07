@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
 import 'videojs-youtube';
+import './videoexpandcss.css';
 
 // import Video from './VideoGrids.tsx';
 
@@ -31,26 +32,53 @@ const Videoexpand: React.FC<VideoexpandProps> = ({ video, onClose }) => {
   if (!videoId) return null;
 
 
+ useEffect(() => {
+    // handler for keydown events
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    }
+
+    // attach event listener when modal opens
+    document.addEventListener('keydown', handleKeyDown);
+
+    // cleanup listener when component unmounts or modal closes
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [onClose]);
+
+
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-      <div className="relative bg-gray-900 p-4 rounded-lg max-w-4xl w-full">
+    <div className="modal-overlay">
+      <div className="modal-content">
         <button
-          className="absolute top-2 right-2 text-white bg-red-600 hover:bg-red-700 rounded-full p-2"
+          className="modal-close-btn"
           onClick={onClose}
+          aria-label="Close video modal"
         >
           ✕
         </button>
-      <iframe
-          className="w-full h-full rounded-lg"
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&modestbranding=1`}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-          title={video.videoTitle}
-        />
+        <div className="modal-video-container">
+          <iframe
+            className="modal-iframe"
+        src={`https://www.youtube.com/embed/${videoId}?controls=1&modestbranding=1&vq=hd1080`}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+            title={video.videoTitle}
+          />
+        </div>
+        <div className="modal-text-container">
+          <h2 className="modal-title">{video.videoTitle}</h2>
+          <p className="modal-description">{video.videoDescription}</p>
+        </div>
       </div>
     </div>
   );
 };
+
 
 export default Videoexpand;

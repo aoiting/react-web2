@@ -1,9 +1,25 @@
 .col1 h1 {
   white-space: nowrap;
-  overflow-x: auto;
+  overflow: visible;
   text-overflow: ellipsis;
 }
 
 .col1 {
+   flex: 1 1 200px; /* allow to grow/shrink with a minimum width */
   overflow-x: visible;
+}
+
+.col2 {
+  flex: 2 1 400px; /* take more space */
+  min-width: 200px; /* prevent getting too narrow */
+}
+
+.col3 {
+  flex: 0 1 100px; /* or your preferred smaller width */
+  display: flex;
+  justify-content: flex-end;
+  min-width: 80px;
+
+  height: auto;  /* Let height fit content */
+  overflow: visible; /* Ensure content isn’t clipped */
 }
