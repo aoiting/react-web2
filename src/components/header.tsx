@@ -1,13 +1,15 @@
+
 import React, { useState, useEffect, useRef } from 'react';
-import Home from './Home';
-import Design from './Design/Design';
-import Projects from './Projects/Projects';
+import Home from '../Home.tsx';
+import Design from '../Design/Design.tsx';
+import Projects from '../Projects/Projects.tsx';
 import { useNavigate } from 'react-router-dom';
-import './Navbar.css';
+import '../Navbar.css';
+import './header.css';
 
 
 
-const Navbar: React.FC = () => {
+const Header: React.FC = () => {
   const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -40,7 +42,15 @@ const Navbar: React.FC = () => {
 
 
   return (
-    <nav className="navbar" ref={navRef}>
+
+
+    <header className="header">
+      <div className="logo">
+        <h1>Ting Wong Portfolio</h1>
+      </div>
+      
+
+     <nav className="navbar" ref={navRef}>
  <button 
  className="hamburger" 
  onClick={toggleMenu} 
@@ -61,26 +71,10 @@ const Navbar: React.FC = () => {
         <li><button onClick={() => handleNav("/projects")}>Projects</button></li>
       </ul>
     </nav>
+    </header>
   );
 };
 
 
-export default Navbar;
+export default Header;
 
-
-/*
-const Navbar: React.FC = () => {
-    const navigate = useNavigate();
-  return (
-    <nav className="navbar">
-      <ul>
-        <button onClick={()=>navigate("Home")}><a href="">Home</a></button>
-        <li><a href="">About</a></li>
-        <button onClick={()=>navigate("Design")}><a href="">Design</a></button>
-        <button onClick={()=>navigate("Video")}><a href="">Video</a></button>
-       <button onClick={()=>navigate("Projects")}><a href="">Projects</a></button>
-      </ul>
-    </nav>
-  );
-};
-*/

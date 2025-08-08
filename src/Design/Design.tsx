@@ -1,5 +1,6 @@
 import React from 'react';
 import './Design.css';
+import Header from '../components/header.tsx'
 
 import WSPGallery from './components/WSPGallery';
 
@@ -23,10 +24,13 @@ const Design: React.FC = () => {
   ];
 
   return (
+    <><Header />
+    
     <div className="container-design">
       <h3>This is the Design Page</h3>
       <WSPGallery galleryImages={galleryImages} />
-    </div>
+    </div></>
+    
   );
 };
 

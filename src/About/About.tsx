@@ -3,6 +3,7 @@ import './About.css';
 import VideoJStest from '../Video/VideoJStest.tsx';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import Header from '../components/header.tsx'
 
 const About: React.FC = () => {
 
@@ -87,7 +88,9 @@ const About: React.FC = () => {
  
 
   return (
+    
     <div className="container-design">
+         <Header />
       <h3>This is the About Page</h3>
 
       <div>
