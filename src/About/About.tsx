@@ -8,7 +8,7 @@ import Header from '../components/header.tsx'
 const About: React.FC = () => {
 
    const videoJsOptions = {
-    autoplay: true,
+    autoplay: false,
     controls: true,
     responsive: true,
     fluid: true,
@@ -88,9 +88,12 @@ const About: React.FC = () => {
  
 
   return (
-    
+    <div>
+      <Header />
+
+
     <div className="container-design">
-         <Header />
+         
       <h3>This is the About Page</h3>
 
       <div>
@@ -102,6 +105,7 @@ const About: React.FC = () => {
         <VideoJStest videoId="75qBYnXB4r8" />
       </div>
 
+    </div>
     </div>
   );
 };

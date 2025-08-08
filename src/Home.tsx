@@ -4,11 +4,12 @@ import Header from './components/header.tsx'
 
 const Home: React.FC = () => {
     return (
-
+    <div>
+     <Header />
 
     <div className="container-home">
 
-   <Header />
+
 
   <div className="home-content">
     <h3>This is the Home Page</h3>
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
 
   </div>
 
+  </div>
     )
 };
 

@@ -6,9 +6,12 @@ import Header from '../components/header.tsx'
 
 function Video(){
   return (
+    <div>
+<Header />
+
 
 <div className='video-container'>
-<Header />
+
 
   <div className='video-banner'>
     <h3>This is the Video Page</h3>
@@ -19,7 +22,7 @@ function Video(){
     <VideoGrids />
 
 </div>
-
+</div>
   )
 };
 
