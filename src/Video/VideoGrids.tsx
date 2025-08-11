@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 //import { Video } from './video';
-import './video.css';
-import Videoexpand from './videoexpand.tsx';
-import 'video.js/dist/video-js.css';
-import 'videojs-youtube';
-import VideoJS from '../Video/VideoJS.tsx';
+import "./video.css";
+import Videoexpand from "./videoexpand.tsx";
+import "video.js/dist/video-js.css";
+import "videojs-youtube";
+import VideoJS from "../Video/VideoJS.tsx";
 
 export interface Video {
   _id: string;
@@ -20,41 +20,37 @@ function extractYouTubeId(url: string): string | null {
   return match && match[2].length === 11 ? match[2] : null;
 }
 
-
 const VideoGrids: React.FC = () => {
   const [videos, setVideos] = useState<Video[]>([]);
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
 
   const getAllVideos = async () => {
-
     try {
-      const response = await fetch('http://localhost:8000/portfolio/Video');
+      const response = await fetch("http://localhost:8000/portfolio/Video");
       const textData = await response.text();
       try {
         const data = JSON.parse(textData);
-      setVideos(data);
-    } catch (jsonError) {
-      console.error('Error parsing JSON:', jsonError);
-      console.log('Response text was:', textData);
+        setVideos(data);
+      } catch (jsonError) {
+        console.error("Error parsing JSON:", jsonError);
+        console.log("Response text was:", textData);
+      }
+    } catch (error) {
+      console.error("Error fetching videos:", error);
     }
-  } catch (error) {
-    console.error('Error fetching videos:', error);
-  }
-}
-
+  };
 
   useEffect(() => {
     getAllVideos();
   }, []);
 
-    return (
+  return (
     <div className="video-grid">
-
       {videos.map((video) => {
         const videoId = extractYouTubeId(video.videoLocation);
         if (!videoId) return null; // skip invalid URLs or non-YouTube videos
 
- const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
 
         return (
           <div
@@ -62,28 +58,32 @@ const VideoGrids: React.FC = () => {
             className="video-item"
             onClick={() => setSelectedVideo(video)}
           >
-          <img
-            src={thumbnailUrl}
-            alt={video.videoTitle}
-            className="video-thumbnail"
-            style={{ cursor: "pointer" }}
-          />
-
+            <img
+              src={thumbnailUrl}
+              alt={video.videoTitle}
+              className="video-thumbnail"
+              style={{ cursor: "pointer" }}
+            />
             <VideoJS videoId={videoId} />
             <h4>{video.videoTitle}</h4>
-         <p className="video-description">{video.videoDescription}</p>  {/* Add this line */}
+            <p className="video-description">{video.videoDescription}</p>{" "}
+            {/* Add this line */}
           </div>
         );
       })}
 
-      <Videoexpand video={selectedVideo} onClose={() => setSelectedVideo(null)} />
+   <Videoexpand
+  video={selectedVideo}
+  videos={videos}             // pass all videos here
+  onClose={() => setSelectedVideo(null)}
+  onSelectVideo={(video) => setSelectedVideo(video)}  // handler to select different video
+/>
+
     </div>
   );
 };
 
 export default VideoGrids;
-
-
 
 /* test front end 
 
@@ -109,7 +109,6 @@ const mockVideos: Video[] = [
 }
 
 */
-
 
 /*
     try {

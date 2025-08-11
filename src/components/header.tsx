@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Home from "../Home.tsx";
+import Home from "../Home/Home.tsx";
 import Design from "../Design/Design.tsx";
 import Projects from "../Projects/Projects.tsx";
 import { useNavigate } from "react-router-dom";

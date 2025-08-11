@@ -100,63 +100,37 @@ css
 
 /* On smaller screens */
 
+/* Hamburger and menu on small screens */
 @media (max-width: 768px) {
-  .navbar ul {
+  .navbar-menu {
     flex-direction: column;
-    position: absolute;
+    position: absolute;    /* absolute for dropdown */
+    top: 60px;             /* below the header height */
+    right: 1.5rem;         /* align under hamburger */
+    width: 180px;          /* fixed width */
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    display: none;         /* hidden initially */
+    z-index: 20;
+  }
+
+    .navbar ul {
+    flex-direction: column;
+    position: static;
       top: calc(100% + 10px);
     left: 0;
     right: 0;
-    display: none; /* hidden by default */
     gap: 0; /* remove horizontal gap in column */
         z-index: 20;
+            display: none;
   }
-
-
-  .navbar ul.nav-active {
-    display: flex !important; /* show menu when active */
-    flex-direction: column; 
-     left: -50%;
-  }
-
-  .hamburger {
-    display: flex; /* show hamburger */
-        position: absolute;
-    top: 200%;
-  
-    transform: translateY(-50%);
-        z-index: 10;
-  }
-
-
-
-  .navbar li {
-    display: block; /* stack items */
-  }
-
-  .navbar button {
-    padding: 1rem 2.5rem;
-    width: 180%;
-    left:10;
-    text-align: center;
-    border-radius: 0; /* optional: remove rounding on small screens */
-    border-top: 1px solid #555;
-    border-bottom: none; /* remove underline by default */
-  }
-
-  .navbar button:hover,
-  .navbar button:focus,
-  .navbar button.active {
-    border-bottom: none; /* remove underline on small screens */
-    color: #8B8CD6;
-  }
-
 
     .navbar ul.nav-links {
     flex-direction: column;
     position: absolute;
     display: none;
   }
+
   .navbar ul.nav-links.nav-active {
     display: flex !important;
     flex-direction: column;
@@ -165,7 +139,32 @@ css
     top: 500%;
     left: -20%; 
     right: 10;
+    display: none;
+  
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 30;
+  }
+
+  .navbar button {
+    padding: 1rem 1.5rem;
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+    border-top: 1px solid #555;
+    border-bottom: none;
+  }
+
+  .navbar button:hover,
+  .navbar button:focus,
+  .navbar button.active {
+    color: #8B8CD6;
+    border-bottom: none;
   }
 }
-
-

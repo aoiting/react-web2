@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Home';
+import Home from './Home/Home.tsx';
 import Design from './Design/Design';
 import Video from './Video/Video';
 import Projects from './Projects/Projects';

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Layout.css';
 import Header from './components/header.tsx'
-import Home from './Home.tsx';
+import Home from './Home/Home.tsx';
 
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
