@@ -1,12 +1,14 @@
-.container-design{
+.container-about{
 justify-content: center; 
     padding: 50px;
+
 }
 
 .container-image{
  display: flex;
   justify-content: center;
 width: 100%;
+
 }
 
 .custom-title{
@@ -20,3 +22,74 @@ width: 100%;
 .image-list-item{
   margin: 10px;
 } 
+
+.aboutme h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #8B8CD6;
+    text-align: left;
+}
+
+.aboutme p {
+    font-size: 20px;
+    color: #FFF;
+    position: center; 
+    text-align: center;
+}
+
+.about-content h2{
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B8CD6;
+    padding-top: 15px;
+      text-align: left;
+}
+
+/* Education */
+.year {
+  display: inline-block;
+  width: 60px;
+  font-weight: bold;
+  font-family: monospace;
+}
+.value {
+  display: inline-block;
+  font-family: monospace;
+}
+
+
+
+
+
+
+
+/* skill */
+
+.skill-flexbox{
+    display: flex;
+  flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.skill-item{
+  background-color: #8B8CD6;
+  width: 150px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.skill-item h4{
+  margin: 0;
+  padding: 5px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.skill-item p{
+  margin: 5px 0;
+  font-size: 15px;
+  color: white;
+}
