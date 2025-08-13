@@ -1,7 +1,15 @@
+.container-about h2{
+      font-size: 30px;
+    font-weight: bold;
+    color: #8B8CD6;
+    text-align: left;
+}
+
 .container-about{
 justify-content: center; 
-    padding: 50px;
 
+margin-left: 20%;
+margin-right: 20%;
 }
 
 .container-image{
@@ -23,12 +31,6 @@ width: 100%;
   margin: 10px;
 } 
 
-.aboutme h2 {
-    font-size: 30px;
-    font-weight: bold;
-    color: #8B8CD6;
-    text-align: left;
-}
 
 .aboutme p {
     font-size: 20px;
@@ -46,7 +48,14 @@ width: 100%;
 }
 
 /* Education */
+
+.education{
+  position: center; 
+  text-align: center;
+
+}
 .year {
+
   display: inline-block;
   width: 60px;
   font-weight: bold;

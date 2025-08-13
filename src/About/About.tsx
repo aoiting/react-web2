@@ -18,11 +18,14 @@ const About: React.FC = () => {
           <p> Hi I am Ting</p>
         </div>
 
-<div className="about-content">
+<div className="education">
         <h2>Education</h2>
-     <span className="year">2012</span><span className="value">XXXXX</span> <br></br>
-<span className="year">2013</span><span className="value">YYYYY</span>
+     <span className="year">2012</span><span className="value">XXXXX <br></br><span className="value">XXXXX</span>  </span><br></br>
+     <span className="year">2013</span><span className="value">YYYYY</span>
 
+</div>
+
+<div className="skills">
 
         <h2>Skills</h2>
 
@@ -54,14 +57,19 @@ const About: React.FC = () => {
             <p>C#</p>
           </div>
         </div>
+        </div>
 
-        <h2> Contact </h2>
+
+      
         <div className="contact-info">
+            <h2> Contact </h2>
           <p>ting@example.com</p>
           </div>
         </div>
       </div>
-    </div>
+
+
+    
   );
 };
 
