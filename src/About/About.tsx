@@ -4,11 +4,21 @@ import VideoJStest from "../Video/VideoJStest.tsx";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 import Header from "../components/header.tsx";
+import "@fontsource/mitr";
+import "@fontsource/mitr/400.css"; 
+import "@fontsource/mitr/500.css"; 
+import "@fontsource/mitr/600.css"; 
+import "@fontsource/mitr/700.css"; 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+
 
 const About: React.FC = () => {
 
   return (
     <div>
+    
       <Header />
 
       <div className="container-about">
@@ -20,8 +30,33 @@ const About: React.FC = () => {
 
 <div className="education">
         <h2>Education</h2>
-     <span className="year">2012</span><span className="value">XXXXX <br></br><span className="value">XXXXX</span>  </span><br></br>
-     <span className="year">2013</span><span className="value">YYYYY</span>
+     <span className="year">2012 - 2015</span>
+     
+     <span className="value"> 
+
+           <span className="subject"> 
+      Bachelor of Arts with Honours in Computing and Interactive Entertainment 
+      <br></br>
+           </span>
+
+      <span className="school">Hong Kong Metropolitan University</span> 
+  
+       </span>
+      
+      <br></br>
+    
+   <span className="year">2023 - 2025</span>
+
+      <span className="value"> 
+        
+   <span className="subject"> Higher Diploma in Multimedia Advertising and Visual Effects
+      <br></br>
+           </span>
+
+      <span className="school">Hong Kong Institute of Vocational Education (Lee Wai Lee)</span> 
+
+       </span>
+      
 
 </div>
 
@@ -61,14 +96,16 @@ const About: React.FC = () => {
 
 
       
-        <div className="contact-info">
-            <h2> Contact </h2>
-          <p>ting@example.com</p>
-          </div>
-        </div>
-      </div>
+<div className="contact-info">
+    <h2>Contact</h2>
+    <div className="email">
+      <FontAwesomeIcon icon={faEnvelope} />
+      <a href="mailto:ting@example.com">ting@example.com</a>
+    </div>
+  </div>
 
-
+</div>
+</div>
     
   );
 };

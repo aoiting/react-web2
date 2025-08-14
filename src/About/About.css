@@ -1,15 +1,20 @@
+body, html, #root {
+  font-family: 'Mitr', sans-serif;
+}
+
 .container-about h2{
-      font-size: 30px;
+  font-family: 'Mitr';
+    font-size: 40px;
     font-weight: bold;
     color: #8B8CD6;
     text-align: left;
 }
 
 .container-about{
-justify-content: center; 
-
-margin-left: 20%;
-margin-right: 20%;
+justify-content: center;
+margin-left: 10%;
+margin-right: 10%;
+margin-bottom: 10%;
 }
 
 .container-image{
@@ -33,7 +38,7 @@ width: 100%;
 
 
 .aboutme p {
-    font-size: 20px;
+    font-size: 25px;
     color: #FFF;
     position: center; 
     text-align: center;
@@ -41,7 +46,7 @@ width: 100%;
 
 .about-content h2{
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 600;
     color: #8B8CD6;
     padding-top: 15px;
       text-align: left;
@@ -51,19 +56,26 @@ width: 100%;
 
 .education{
   position: center; 
-  text-align: center;
-
 }
+
 .year {
-
+  font-size: 20px;
   display: inline-block;
-  width: 60px;
-  font-weight: bold;
-  font-family: monospace;
+  width: 200px;
+   text-align: right;
+
 }
+
 .value {
-  display: inline-block;
-  font-family: monospace;
+  padding-left: 20px;
+    font-size: 20px;
+    display: inline-block;
+    vertical-align: top;
+     text-align: left;
+}
+
+.subject {
+    font-weight: 600;
 }
 
 
@@ -72,7 +84,9 @@ width: 100%;
 
 
 
-/* skill */
+
+
+/* Skills */
 
 .skill-flexbox{
     display: flex;
@@ -81,24 +95,43 @@ width: 100%;
 }
 
 .skill-item{
-  background-color: #8B8CD6;
-  width: 150px;
+
+  background: linear-gradient(to bottom, #242424 0%, #8b8cd6 100%);
+  width: 200px;
   margin: 10px;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
+
 }
 
 .skill-item h4{
   margin: 0;
   padding: 5px 0;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 25px;
+  font-weight: 500;
   color: white;
 }
 
 .skill-item p{
   margin: 5px 0;
-  font-size: 15px;
-  color: white;
+  font-size: 20px;
+  color: #242424;
+  font-weight: 400;
+}
+
+
+
+/* Contact */
+.email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 20px;
+}
+
+.email a {
+  text-decoration: underline;
+  color: inherit;
 }
