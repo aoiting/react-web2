@@ -30,6 +30,8 @@ const About: React.FC = () => {
 
 <div className="education">
         <h2>Education</h2>
+
+          <div className="education-row">
      <span className="year">2012 - 2015</span>
      
      <span className="value"> 
@@ -42,9 +44,11 @@ const About: React.FC = () => {
       <span className="school">Hong Kong Metropolitan University</span> 
   
        </span>
+       </div>
       
       <br></br>
-    
+
+            <div className="education-row">
    <span className="year">2023 - 2025</span>
 
       <span className="value"> 
@@ -56,7 +60,7 @@ const About: React.FC = () => {
       <span className="school">Hong Kong Institute of Vocational Education (Lee Wai Lee)</span> 
 
        </span>
-      
+       </div>
 
 </div>
 

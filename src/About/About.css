@@ -54,8 +54,16 @@ width: 100%;
 
 /* Education */
 
+
 .education{
   position: center; 
+}
+
+.education-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* aligns top of .year and .value */
+  margin-bottom: 10px; /* optional spacing between rows */
 }
 
 .year {
@@ -63,15 +71,15 @@ width: 100%;
   display: inline-block;
   width: 200px;
    text-align: right;
+     margin-right: 20px; /* spacing between year and value */
 
 }
 
 .value {
-  padding-left: 20px;
-    font-size: 20px;
-    display: inline-block;
-    vertical-align: top;
-     text-align: left;
+  font-size: 20px;
+  display: inline-block;
+  width: 800px; /* adjust width as needed */
+  text-align: left;
 }
 
 .subject {

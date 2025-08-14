@@ -7,6 +7,11 @@
   margin-top: 2rem;
 }
 
+.home-content h3{
+  font-size: 80px;
+  text-shadow: -4px -3px 0px rgba(255,185,185,0.6), 5px 4px 0px rgba(75,218,213,0.6);
+}
+
 .knowmorebtn button {
   padding: 1rem 1.5rem;
   font-size: 12px;
