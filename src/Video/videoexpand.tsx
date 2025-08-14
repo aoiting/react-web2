@@ -57,7 +57,9 @@ const Videoexpand: React.FC<VideoexpandProps> = ({ video, videos, onClose, onSel
       <div className="modal-content">
   <button className="modal-close-btn" onClick={onClose} aria-label="Close video modal">✕</button>
 
-  <div className="video-wrapper">
+
+
+    <div className="modal-row first-row">
     <div className="modal-video-container">
       <iframe
         className="modal-iframe"
@@ -69,7 +71,18 @@ const Videoexpand: React.FC<VideoexpandProps> = ({ video, videos, onClose, onSel
       />
     </div>
 
-    <div className="preview-list">
+
+
+
+  <div className="modal-text-container">
+    <h2 className="modal-title">{video.videoTitle}</h2>
+    <p className="modal-description">{video.videoDescription}</p>
+  </div>
+    </div>
+
+  <div className="modal-row second-row">
+
+      <div className="preview-list">
       {videos.filter(v => v._id !== video._id).map(v => {
         const previewId = extractYouTubeId(v.videoLocation);
         if (!previewId) return null;
@@ -85,15 +98,9 @@ const Videoexpand: React.FC<VideoexpandProps> = ({ video, videos, onClose, onSel
         );
       })}
     </div>
-  </div>
-
-  <div className="modal-text-container">
-    <h2 className="modal-title">{video.videoTitle}</h2>
-    <p className="modal-description">{video.videoDescription}</p>
-  </div>
 </div>
 
-
+  </div>
 
     </div>
   );
