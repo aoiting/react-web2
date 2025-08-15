@@ -55,40 +55,66 @@ width: 100%;
 /* Education */
 
 
-.education{
-  position: center; 
-}
 
 .education-row {
+  width: 100%;
+  max-width:800px; /* limit max width for better centering */
+  margin: 0 auto; /* center the container horizontally */
   display: flex;
-  justify-content: center;
-  align-items: flex-start; /* aligns top of .year and .value */
-  margin-bottom: 10px; /* optional spacing between rows */
+  /* align year and value horizontally */
+  align-items: flex-start; /* top align */
+  margin-bottom: 1em; /* spacing between each education-row */
 }
 
 .year {
+  width: 140px;
+  white-space: nowrap;
+  text-align: left;
+  margin-right: 20px;
+  font-family: 'Mitr', sans-serif;
   font-size: 20px;
-  display: inline-block;
-  width: 200px;
-   text-align: right;
-     margin-right: 20px; /* spacing between year and value */
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+    word-break: break-word;
 
 }
 
 .value {
   font-size: 20px;
-  display: inline-block;
-  width: 800px; /* adjust width as needed */
-  text-align: left;
+  min-width: 500px; /* adjust or use max-width */
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+    word-break: break-word;
+
 }
 
 .subject {
-    font-weight: 600;
+  font-weight: 600;
+  display: block;
+  word-break: keep-all;
+  hyphens: auto;
+}
+
+/* Optional: if you want to control finer line spacing */
+.value span {
+  display: block;
+  line-height: 1.2;
 }
 
 
+@media (max-width: 920px) {
+  .year {
+    margin-right: 0;
+    margin-bottom: 5px;
+    text-align: left;
 
+  }
 
+  .value {
+    min-width: 0;
+      white-space: normal;
+  }
+}
 
 
 
