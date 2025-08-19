@@ -1,10 +1,27 @@
+//Projects.tsx
 import React, { useState } from 'react';
 import './Projects.css';
 import Header from '../components/header.tsx';
 
-import ProjectList from './ProjectList.tsx';
-import type { Project } from './ProjectList.tsx';
-import ProjectDetails from './ProjectDetails.tsx';
+// import ProjectList from './ProjectList.tsx';
+// import type { Project } from './ProjectList.tsx';
+import ProjectDetails from './ProjectDetails';
+
+
+import pic1 from "../assets/pic1.png";
+import pic2 from "../assets/pic2.png";
+
+// Define the Project type
+type Project = {
+  id: string;
+  name: string;
+  description: string;
+  type: string;
+  date: string;
+  madeBy: string;
+  images?: string[];
+  videos?: string[];
+};
 
 const projects: Project[] = [
   {
@@ -14,9 +31,9 @@ const projects: Project[] = [
     type: 'PC Game',
     date: 'Nov 2024',
     madeBy: 'Unreal Engine',
-       images: [
-      '/assets/pic1.png',
-      '../../assets/pic2.png',
+   images: [pic1, pic2],
+    videos: [
+      'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example YouTube video link
     ],
   },
   {
@@ -39,22 +56,16 @@ const projects: Project[] = [
 ];
 
 const Projects: React.FC = () => {
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
-
-  const selectedProject = projects.find((p) => p.id === selectedProjectId) || null;
 
   return (
     <>
       <Header />
 
       <div className="container-projects">
-        <h3>This is the Projects Page</h3>
+    
 
-        {!selectedProject ? (
-          <ProjectList projects={projects} onSelect={setSelectedProjectId} />
-        ) : (
-          <ProjectDetails project={selectedProject} onBack={() => setSelectedProjectId(null)} />
-        )}
+   <ProjectDetails projects={projects} />
+
       </div>
     </>
   );
