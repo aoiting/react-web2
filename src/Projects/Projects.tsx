@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import './Projects.css';
 import Header from '../components/header.tsx';
 
-// import ProjectList from './ProjectList.tsx';
-// import type { Project } from './ProjectList.tsx';
 import ProjectDetails from './ProjectDetails';
 
 
@@ -33,7 +31,7 @@ const projects: Project[] = [
     madeBy: 'Unreal Engine',
    images: [pic1, pic2],
     videos: [
-      'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example YouTube video link
+      'https://www.youtube.com/watch?v=75qBYnXB4r8',
     ],
   },
   {

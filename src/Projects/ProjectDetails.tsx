@@ -26,23 +26,25 @@ const VideoPlayer: React.FC<{ src: string }> = ({ src }) => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const playerRef = useRef<videojs.Player | null>(null);
 
-  useEffect(() => {
+useEffect(() => {
     if (videoRef.current) {
       playerRef.current = videojs(videoRef.current, {
         controls: true,
         autoplay: false,
         preload: "auto",
-        techOrder: ["youtube"],
-        sources: [{  type: "youtube",          // must be 'youtube'
-      src: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", }],
-         youtube: {
-    modestbranding: 1, // optional: remove logo
-    rel: 0,            // optional: don't show related videos
-  },
+        fluid: true,  // Added: Makes the player responsive
+        // techOrder: ["youtube"],  // Optional: Comment out or remove, as it's not always needed
+        sources: [{ src, type: "video/youtube" }],
+        youtube: {
+          modestbranding: 1,
+          rel: 0,
+        },
       });
 
-      return () => {
-        playerRef.current?.dispose();
+return () => {
+        if (playerRef.current && !playerRef.current.isDisposed()) {
+          playerRef.current.dispose();
+        }
       };
     }
   }, [src]);
@@ -69,8 +71,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projects }) => {
   if (!selectedProject) {
     // Show project list only when no project is selected
     return (
-      <div>
-        <h2>Choose a Project</h2>
+      <div className="project-mainpage">
+        <h4>Choose a Project</h4>
         <ul style={{ listStyleType: "none", padding: 0 }}>
           {projects.map((project) => (
             <li key={project.id} style={{ margin: "10px 0" }}>
@@ -126,6 +128,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projects }) => {
             ))}
           </div>
         )}
+
 
         {selectedProject.videos && selectedProject.videos.length > 0 && (
           <div className="project-videos">
