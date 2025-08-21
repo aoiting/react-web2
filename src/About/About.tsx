@@ -1,10 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
-import VideoJStest from "../Video/VideoJStest.tsx";
-import videojs from "video.js";
-import "video.js/dist/video-js.css";
 import Header from "../components/header.tsx";
-import "@fontsource/mitr";
+// import "@fontsource/mitr";
 import "@fontsource/mitr/400.css";
 import "@fontsource/mitr/500.css";
 import "@fontsource/mitr/600.css";
