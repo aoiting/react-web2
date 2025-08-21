@@ -76,6 +76,7 @@ color: #8B8CD6;
 
 .project-videos {
   width: 100%;
-  max-width: 800px; /* Adjust as needed */
+  max-width: 800px;
   margin: 0 auto;
+  overflow: visible;
 }

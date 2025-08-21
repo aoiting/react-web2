@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Projects.css";
 import videojs from "video.js";
+import type Player from "video.js/dist/types/player";
 import "video.js/dist/video-js.css";
 import "videojs-youtube";
 
@@ -23,17 +24,16 @@ interface ProjectDetailsProps {
 
 // Inline VideoPlayer component
 const VideoPlayer: React.FC<{ src: string }> = ({ src }) => {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const playerRef = useRef<videojs.Player | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
 
-useEffect(() => {
+  useEffect(() => {
     if (videoRef.current) {
       playerRef.current = videojs(videoRef.current, {
         controls: true,
         autoplay: false,
         preload: "auto",
-        fluid: true,  // Added: Makes the player responsive
-        // techOrder: ["youtube"],  // Optional: Comment out or remove, as it's not always needed
+        fluid: true,
         sources: [{ src, type: "video/youtube" }],
         youtube: {
           modestbranding: 1,
@@ -41,7 +41,7 @@ useEffect(() => {
         },
       });
 
-return () => {
+      return () => {
         if (playerRef.current && !playerRef.current.isDisposed()) {
           playerRef.current.dispose();
         }
@@ -130,18 +130,29 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ projects }) => {
         )}
 
 
+  
         {selectedProject.videos && selectedProject.videos.length > 0 && (
-          <div className="project-videos">
-            {selectedProject.videos.map((videoUrl, i) => (
-              <div key={i} style={{ marginBottom: "20px" }}>
-                <VideoPlayer src={videoUrl} />
-              </div>
-            ))}
-          </div>
-        )}
+  <div className="project-videos">
+    {selectedProject.videos.map((videoUrl, i) => (
+      <div key={i} style={{ marginBottom: "20px" }}>
+        <iframe
+          width="100%"
+          height="360"
+          src={videoUrl.replace("watch?v=", "embed/")} // Convert to embed URL
+          title={`YouTube video ${i + 1}`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    ))}
+  </div>
+)}
+
       </div>
     </div>
   );
 };
 
 export default ProjectDetails;
+

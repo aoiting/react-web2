@@ -41,6 +41,9 @@ const projects: Project[] = [
     type: 'Mobile App',
     date: 'Jan 2025',
     madeBy: 'React Native',
+        videos: [
+      'https://www.youtube.com/watch?v=OA3NygSyaKQ',
+    ],
   },
   {
     id: '3',
