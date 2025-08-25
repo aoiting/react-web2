@@ -1,6 +1,5 @@
 import React from 'react';
 import './Layout.css';
-import Header from './components/header.tsx'
 import Home from './Home/Home.tsx';
 
 

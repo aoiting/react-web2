@@ -5,7 +5,6 @@ import Design from './Design/Design';
 import Video from './Video/Video';
 import Projects from './Projects/Projects';
 import About from './About/About';
-import Header from './components/header.tsx'
 
 const App: React.FC = () => {
   return (

@@ -1,4 +1,3 @@
-import React, { useEffect, useRef, useState } from "react";
 import "./About.css";
 import Header from "../components/header.tsx";
 // import "@fontsource/mitr";
