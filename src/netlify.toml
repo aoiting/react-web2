@@ -1,20 +1,13 @@
 [build]
-  # Base directory for the build
   base = "src"
-  # Build command to generate static frontend assets
   command = "npm run build"
-  # Directory to publish (Vite’s default output directory)
   publish = "dist"
+  environment:
+    - NODE_ENV = "production"
 
 [functions]
-  # Directory for Netlify Functions (backend)
   directory = "src/backend/functions"
 
-# Environment variables for the build and functions
-[build.environment]
-  NODE_ENV = "production"
-
-# Optional: Redirects for client-side routing (React Router)
 [[redirects]]
   from = "/*"
   to = "/index.html"
