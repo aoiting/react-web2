@@ -26,7 +26,7 @@ const VideoGrids: React.FC = () => {
 
   const getAllVideos = async () => {
     try {
-      const response = await fetch("http://localhost:8000/portfolio/Video");
+      const response = await fetch("https://backend-production-0d61.up.railway.app:8080/portfolio/Video");
       const textData = await response.text();
       try {
         const data = JSON.parse(textData);
