@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node index.js",
     "dev": "vite",
-    "backend": "nodemon src/backend/server.js"
+    "backend": "nodemon src/backend/server.js",
+    "build": "vite build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,6 +27,7 @@
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.3",
     "react-youtube": "^10.1.0",
+    "serverless-http": "^3.2.0",
     "videojs-youtube": "^3.0.1"
   },
   "devDependencies": {
